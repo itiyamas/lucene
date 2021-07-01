@@ -101,6 +101,10 @@ allprojects {
           // miscellaneous; some of them very weird.
           [propName: 'tests.LUCENE_VERSION', value: baseVersion, description: "Base Lucene version."],
           [propName: 'tests.bwcdir', value: null, description: "Data for backward-compatibility indexes."],
+          [propName: 'tests.niofstest.dirname', value: System.getProperty("tests.niofstest.dirname"), description: "nio param dir name"],
+          [propName: 'tests.niofstest.time.millis', value: System.getProperty("tests.niofstest.time.millis"), description: "nio param time millis"],
+          [propName: 'tests.niofs.parallelThreads', value: System.getProperty("tests.niofs.parallelThreads"), description: "nio param parallel threads"],
+          [propName: 'tests.niofs.cleanUp', value: System.getProperty("tests.niofs.cleanUp"), description: "nio param clean up"],
       ]
     }
   }

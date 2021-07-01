@@ -17,6 +17,8 @@
 package org.apache.lucene.util;
 
 import java.lang.StackWalker.StackFrame;
+import java.security.AccessController;
+import java.security.Permission;
 import java.util.Locale;
 import java.util.function.Predicate;
 
@@ -86,5 +88,10 @@ public final class TestSecurityManager extends SecurityManager {
     final String methodName = f.getMethodName(), className = f.getClassName();
     return ("exit".equals(methodName) || "halt".equals(methodName))
         && (SYSTEM_CLASS_NAME.equals(className) || RUNTIME_CLASS_NAME.equals(className));
+  }
+
+  @Override
+  public void checkPermission(Permission perm) {
+    ;
   }
 }
